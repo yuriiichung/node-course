@@ -1,22 +1,23 @@
 {
   "name": "node-course",
   "version": "1.0.0",
-  "description": "My NodeJS course",
+  "description": "Node.JS source code for courses given by Fiqus.",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pbrudnick/node-course.git"
-  },
   "scripts": {
     "test": "mocha",
     "test-coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec"
   },
-  "author": "pbrudnick",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pbrudnick/node-course/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fiqus/node-course.git"
   },
-  "homepage": "https://github.com/pbrudnick/node-course#readme",
+  "homepage": "https://github.com/fiqus/node-course",
+  "author": "Fiqus Cooperativa de Trabajo Ltda.",
+  "license": "GPL-3.0",
+  "keywords": [
+    "node",
+    "course"
+  ],
   "dependencies": {
     "countryjs": "^1.8.0",
     "express": "^4.16.2",

@@ -1,15 +1,14 @@
-const http = require('http'),
-  { fork } = require('child_process'),
-  hostname = '127.0.0.1',
-  port = 3000;
+const http = require("http"),
+  {fork} = require("child_process"),
+  hostname = "127.0.0.1",
+  port = 8000,
+  server = http.createServer();
 
-const server = http.createServer();
-
-server.on('request', (req, res) => {
-  if (req.url === '/compute') {
+server.on("request", (req, res) => {
+  if (req.url === "/compute") {
     // write your code here
   } else {
-    res.end('Ok')
+    res.end(`Run http://${hostname}:${port}/compute`);
   }
 });
 

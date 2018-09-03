@@ -1,23 +1,22 @@
-const http = require('http'),
-  hostname = '127.0.0.1',
-  port = 3000;
+const http = require("http"),
+  hostname = "127.0.0.1",
+  port = 8000,
+  server = http.createServer();
 
-const longComputation = () => {
+function longComputation() {
   let sum = 0;
-  for (let i = 0; i < 1e9; i++) {
+  for (let i = 0; i < 1e10; i++) {
     sum += i;
-  };
+  }
   return sum;
-};
+}
 
-const server = http.createServer();
-
-server.on('request', (req, res) => {
-  if (req.url === '/compute') {
+server.on("request", (req, res) => {
+  if (req.url === "/compute") {
     const sum = longComputation();
-    return res.end(`Sum is ${sum}`);
+    res.end(`Sum is ${sum}`);
   } else {
-    res.end('Ok')
+    res.end(`Run http://${hostname}:${port}/compute`);
   }
 });
 

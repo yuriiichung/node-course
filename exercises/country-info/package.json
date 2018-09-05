@@ -1,6 +1,10 @@
 {
   "name" : "country-info",
   "version" : "0.0.1",
-  "dependencies" : {
-  }
+  "scripts": {
+    "test": "mocha",
+    "test-coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

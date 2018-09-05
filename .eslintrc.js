@@ -114,7 +114,7 @@ module.exports = {
 
     //NODE
     // require return statements after callbacks
-    "callback-return": 2,
+    "callback-return": 0,
     // require require() calls to be placed at top-level module scope
     "global-require": 0,
     // require error handling in callbacks
@@ -242,7 +242,7 @@ module.exports = {
     // enforce consistent linebreak style for operators
     "operator-linebreak": 2,
     // require or disallow padding within blocks
-    "padded-blocks": [2, "never"],
+    "padded-blocks": 0,
     // require quotes around object literal property names
     "quote-props": 0,
     // enforce the consistent use of either backticks, double, or single quotes

@@ -1,5 +1,11 @@
 module.exports = {
+
   getCountryInfo(code, cb) {
-    // your stuff...
+    // write your code here!
+  },
+
+  getCountryInfoByName(name, cb) {
+    // write your code here!
   }
+
 };

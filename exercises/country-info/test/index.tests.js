@@ -20,13 +20,4 @@ describe("country-info tests", () => {
     });
   });
 
-  it("should get the same result with getCountryInfo() and getCountryInfoWithRequire()", (done) => {
-    countryInfo.getCountryInfo("AR", (err, result1) => {
-      expect(err).to.be.eql(null);
-      const result2 = countryInfo.getCountryInfoWithRequire("AR");
-      expect(result1).to.be.eql(result2);
-      done();
-    });
-  });
-
 });

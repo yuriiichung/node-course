@@ -1,37 +1,50 @@
+/* eslint one-var: 0, arrow-parens: 0, arrow-body-style: 0 */
+
 const birds = [
   {
-    id: 23,
     name: "Hornero",
     family: "Furnaridae"
   },
   {
-    id: 67,
     name: "Junquero",
     family: "Furnaridae"
   },
   {
-    id: 35,
     name: "Tachurí Siete Colores",
     family: "Tirannydae"
   },
   {
-    id: 56,
     name: "Piojito Común",
     family: "Tirannydae"
   },
   {
-    id: 86,
     name: "Benteveo Común",
     family: "Tirannydae"
   },
   {
-    id: 45,
     name: "Zorzal Colorado",
     family: "Turdidae"
   }
 ];
 
-// imprimir lo siguiente:
-// 1. array de nombres de todos los pájaros
-// 2. obtener el objeto completo del que tiene nombre "Zorzal Colorado"
-// 3. array de nombres de los pájaros familia Tirannydae
+// Imprimir lo siguiente:
+// 1. Array de nombres de todos los pájaros ordenados alfabéticamente.
+// 2. Obtener el objeto completo del que tiene nombre "Zorzal Colorado".
+// 3. Array de nombres de los pájaros de la familia "Tirannydae".
+// 4. Cantidad de pájaros de la familia "Furnaridae".
+
+function filterBy(array, prop, val) {
+  return array.filter(elem => elem[prop] === val);
+}
+
+const birdNames = birds.map(b => b.name).sort((bName1, bName2) => bName1 > bName2);
+console.log("1. Nombres de todos los pájaros alfabéticamente: ", birdNames.join(", "));
+
+const zorzal = birds.find(b => b.name === "Zorzal Colorado");
+console.log("2. Objeto completo para \"Zorzal Colorado\": ", zorzal);
+
+const tirannydae = filterBy(birds, "family", "Tirannydae").map(b => b.name);
+console.log("3. Nombres de los pájaros de la familia \"Tirannydae\": ", tirannydae);
+
+const furnaridae = filterBy(birds, "family", "Furnaridae").length;
+console.log("4. Cantidad de pájaros de la familia \"Furnaridae\": ", furnaridae);

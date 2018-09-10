@@ -201,8 +201,8 @@ module.exports = {
     "no-bitwise": 2,
     // disallow continue statements
     "no-continue": 2,
-    // disallow inline comments after code
-    "no-inline-comments": 2,
+    // allow inline comments after code
+    "no-inline-comments": 0,
     // disallow if statements as the only statement in else blocks
     "no-lonely-if": 2,
     // disallow mixed spaces and tabs for indentation

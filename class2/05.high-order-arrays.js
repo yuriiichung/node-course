@@ -1,4 +1,4 @@
-/* eslint one-var: 0, func-style: 0, arrow-parens: 0, arrow-body-style: 0 */
+/* eslint one-var: 0, func-style: 0 */
 
 // Array.map()
 console.log("Array.map()");

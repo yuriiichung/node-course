@@ -1,4 +1,4 @@
-/* eslint arrow-body-style: 0, one-var: 0 */
+/* eslint one-var: 0 */
 
 // Example from https://medium.com/@bluepnume/even-with-async-await-you-probably-still-need-promises-9b259854c161
 

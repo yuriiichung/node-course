@@ -1,3 +1,5 @@
+/* eslint func-style: 0 */
+
 const goals = [
   {
     player: "Messi",
@@ -26,7 +28,7 @@ const goals = [
     against: "River",
     score: "3-2",
     minute: 80
-  },
+  }
 ];
 
 function getGoalsFrom(player) {

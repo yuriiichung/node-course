@@ -1,4 +1,4 @@
-/* eslint one-var: 0, arrow-parens: 0, arrow-body-style: 0 */
+/* eslint one-var: 0 */
 
 const birds = [
   {

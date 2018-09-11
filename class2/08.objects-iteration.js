@@ -1,4 +1,4 @@
-/* eslint func-style: 0, arrow-parens: 0, arrow-body-style: 0, one-var: 0 */
+/* eslint func-style: 0, one-var: 0 */
 
 const whatever = "Ok, whatever dude..!",
   obj = {

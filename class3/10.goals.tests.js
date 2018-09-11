@@ -1,6 +1,5 @@
-const goalsModule = require("../17.goals"), 
-  chai = require("chai"),
-  expect = chai.expect;
+const goalsModule = require("./10.goals"), 
+  expect = require("chai").expect;
 
 describe("tests for goals", () => {
 
@@ -18,22 +17,22 @@ describe("tests for goals", () => {
     expect(goals[0].against).to.be.eql("River");
   });
 
-  describe("now testing async", () => {
+  context("now testing async", () => {
 
-    it("should return all the goals if no errors", (done) => {
-      let err = null;
-      goalsModule.asyncTaskAndGetGoals(err, (err, goals) => {
-        expect(err).to.be.eql(null);
-        expect(goals).to.be.eql(goalsModule.goals);
+    it("should return error and no goals if there is an error", (done) => {
+      const myError = new Error("an error");
+      goalsModule.asyncTaskAndGetGoals(myError, (err, goals) => {
+        expect(err).to.be.eql(myError);
+        expect(goals).to.be.eql(null);
         done();
       });
     });
 
-    it("should return error and no goals if there is an error", (done) => {
-      let myError = new Error("an error");
-      goalsModule.asyncTaskAndGetGoals(myError, (err, goals) => {
-        expect(err).to.be.eql(myError);
-        expect(goals).to.be.eql(null);
+    it("should return all the goals if no errors", (done) => {
+      const error = null;
+      goalsModule.asyncTaskAndGetGoals(error, (err, goals) => {
+        expect(err).to.be.eql(error);
+        expect(goals).to.be.eql(goalsModule.goals);
         done();
       });
     });
@@ -43,5 +42,5 @@ describe("tests for goals", () => {
         expect(result).to.be.eql(goalsModule.goals);
       });
     });
-  })
+  });
 });

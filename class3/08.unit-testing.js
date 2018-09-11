@@ -27,8 +27,8 @@ function arrayFromNumber(x) {
 
 // https://medium.com/building-ibotta/testing-arrays-and-objects-with-chai-js-4b372310fe6d
 // assert.equal(arrayFromNumber(1), 1); // Este assert va a pasar aunque [1] !== 1
-// assert.equal(arrayFromNumber(1), [1]); // Este test va a fallar tambien!
-// expect(arrayFromNumber(1)).to.equal([1]); // Y este también, por que [1] !=== [1]
+// assert.equal(arrayFromNumber(1), [1]); // Este test va a fallar tambien, por que [1] !=== [1]
+// expect(arrayFromNumber(1)).to.equal([1]); // Y este también por el mismo motivo
 expect(arrayFromNumber(1)).to.eql([1]); // Pero este SÍ pasa por el uso de eql()
 expect(arrayFromNumber(0)).to.eql([]);
 expect(arrayFromNumber(2)).to.eql([1, 2]);
@@ -42,23 +42,23 @@ function canAccessToCasino(person) {
 }
 
 // Por qué debemos hacer esto?
-let sut = () => {
+let wrapper = () => {
   canAccessToCasino();
 };
-assert.throws(sut, /cannot access!/);
-expect(sut).to.throw(/cannot access!/);
+assert.throws(wrapper, /cannot access!/);
+expect(wrapper).to.throw(/cannot access!/);
 
-sut = () => {
+wrapper = () => {
   canAccessToCasino({name: "Joe"});
 };
-assert.throws(sut, /cannot access!/);
-expect(sut).to.throw(/cannot access!/);
+assert.throws(wrapper, /cannot access!/);
+expect(wrapper).to.throw(/cannot access!/);
 
-sut = () => {
+wrapper = () => {
   canAccessToCasino({name: "Joe", age: 17});
 };
-assert.throws(sut, /cannot access!/);
-expect(sut).to.throw(/cannot access!/);
+assert.throws(wrapper, /cannot access!/);
+expect(wrapper).to.throw(/cannot access!/);
 
 assert.equal(canAccessToCasino({name: "Ian", age: 18}), true);
 expect(canAccessToCasino({name: "Ian", age: 18})).to.eql(true);

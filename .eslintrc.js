@@ -273,10 +273,10 @@ module.exports = {
     "wrap-regex": 0,
 
     // ES6
-    // require braces around arrow function bodies
-    "arrow-body-style": [2, "always"],
-    // require parentheses around arrow function arguments
-    "arrow-parens": 2,
+    // don't require braces around arrow function bodies
+    "arrow-body-style": 0,
+    // don't require parentheses around arrow function arguments
+    "arrow-parens": 0,
     // enforce consistent spacing before and after the arrow in arrow functions
     "arrow-spacing": 2,
     // require super() calls in constructors

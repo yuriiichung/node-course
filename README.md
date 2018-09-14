@@ -7,7 +7,7 @@ The files contained are the examples and exercises used in the classes through t
 
 # Requirements
 Node >= v8\
-NPM >= 5"\
+NPM >= 5\
 NVM >= 0.33.11
 
 # How to use

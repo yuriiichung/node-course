@@ -12,5 +12,22 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  const url = `http://${hostname}:${port}/`;
+  console.log(`Server running at ${url}`);
+
+  // Verify that server is up!
+  http.get(url, (resp) => {
+    let data = "";
+
+    resp.on("data", (chunk) => {
+      data += chunk;
+    });
+
+    resp.on("end", () => {
+      console.log(`RESPONSE: ${data}`);
+    });
+
+  }).on("error", (err) => {
+    console.error(err);
+  });
 });

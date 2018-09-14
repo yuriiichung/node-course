@@ -1,16 +1,17 @@
-const request = require('request');
+const request = require("request");
 
 // docs: https://any-api.com/github_com/github_com/docs/
 function getNodeRepos(callback) {
   const options = {
     url: "https://api.github.com/orgs/nodejs/repos",
     headers: {
-      'user-agent': 'node-course',
+      "user-agent": "node-course",
     }
-  }
+  };
+
   request.get(options, (err, response, body) => {
     if (err) return callback(err, null);
-    if (response.statusCode == 200) {
+    if (response.statusCode === 200) {
       return callback(null, JSON.parse(body));
     }
     callback(null, []);

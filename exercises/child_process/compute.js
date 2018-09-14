@@ -6,4 +6,6 @@ function longComputation() {
   return sum;
 }
 
-// write your code here
+process.on("message", () => {
+  // write your code here
+});

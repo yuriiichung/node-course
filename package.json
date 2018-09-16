@@ -24,8 +24,12 @@
     "npm": ">= 5.0.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "countryjs": "^1.8.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "morgan": "^1.9.1",
     "request": "^2.88.0"
   },
   "devDependencies": {

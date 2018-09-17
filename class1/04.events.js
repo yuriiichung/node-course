@@ -1,8 +1,8 @@
 const EventEmitter = require("events"),
   myEmitter = new EventEmitter();
 
-myEmitter.on("arrancaElPartido", () => {
-  console.log("Arrancó el partido!");
+myEmitter.on("arrancaElPartido", (tiempo) => {
+  console.log(`Arrancó el partido dentro de ${tiempo}!`);
 });
 
 myEmitter.on("entretiempo", () => {
@@ -14,7 +14,7 @@ myEmitter.on("finDelPartido", () => {
 });
 
 // emiting events
-myEmitter.emit("arrancaElPartido");
+myEmitter.emit("arrancaElPartido", 23);
 
 setTimeout(() => {
   myEmitter.emit("entretiempo");

@@ -1,12 +1,18 @@
 const http = require("http"),
-  file = `${__dirname}/requests.log`;
+  file = `${__dirname}/requests.log`,
+  fs = require("fs");
 
 function transformDataObjectToJson(data) {
   return `${JSON.stringify(data, null, 2)}\n`;
 }
 
 function logRequest(data) {
-  // Write your code here
+  fs.appendFile(file, transformDataObjectToJson(data), (err) => {
+    if (err) { 
+      throw err; 
+    }
+    console.log("Se guardo el log");
+  });
 }
 
 http.createServer((req, res) => {
@@ -16,8 +22,9 @@ http.createServer((req, res) => {
     ip: req.connection.remoteAddress,
     timestamp: new Date().toISOString()
   };
-
   console.log(`Request received for ${req.url}`);
+  logRequest(data);
   res.writeHead(200, {"Content-Type": "application/json"});
   res.end(transformDataObjectToJson(data));
+  console.log("Listo!");
 }).listen(8000);

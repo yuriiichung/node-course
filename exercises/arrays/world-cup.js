@@ -195,16 +195,12 @@ function getTeamsForGroup(group) {
  */
 function simulate() {
   const groups = ["A", "B", "C", "D", "E", "F", "G", "H"];
- 
-
+  
   for (let box = 1; box <= 4; box++) {
     const teamsForBox = shuffle(getTeamsForBox(box));
 
     teamsForBox.forEach((team, index) => {
-      if (box === 1) {
-        index++;
-      }
-      team.group = groups[index]; // Es el mismo object para todos los arrays
+      team.group = groups[index + (box === 1 ? 1 : 0)]; // Es el mismo object para todos los arrays
     });
   }
   
